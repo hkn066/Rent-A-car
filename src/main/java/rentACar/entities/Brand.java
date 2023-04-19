@@ -9,10 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+import lombok.*;
 
 @Getter
 @Setter
@@ -20,6 +18,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "brands")
+@EqualsAndHashCode(callSuper=false)
 public class Brand {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

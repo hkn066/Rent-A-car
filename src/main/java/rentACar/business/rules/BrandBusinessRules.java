@@ -13,13 +13,13 @@ public class BrandBusinessRules {
 
 	public void checkIfBrandExists(String name) {
 		if (this.brandRepository.existsByName(name)) {
-			throw new BusinessException("Brand name already exists");// Java Exception types
+			throw new BusinessException("Brand name already exists");// Java Exception types arasştır
 		}
 	}
 
 	public void checkIfBrandExists(int id) {
 		if (!this.brandRepository.existsById(id)) {
-			throw new BusinessException("Brand id does not exists");// Java Exception types
+			throw new BusinessException("Brand id does not exists");
 		}
 	}
 }
