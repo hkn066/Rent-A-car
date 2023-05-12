@@ -36,16 +36,21 @@ public class CarManager implements CarService {
 
     @Override
     public void delete(int id) {
-
+        carBusinessRules.checkIfCarId(id);
+        carRepository.deleteById(id);
     }
 
     @Override
     public void update(UpdateCarRequest updateCarRequest, int id) {
-
+        carBusinessRules.checkIfCarId(id);
+        Car car=modelMapperService.forRequest().map(updateCarRequest,Car.class);
+        car.setId(id);
+        carRepository.save(car);
     }
 
     @Override
     public GetByIdCarResponse getById(int id) {
+        
         return null;
     }
 }
