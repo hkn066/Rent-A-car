@@ -37,6 +37,7 @@ public class RentACarApplication {
 	
 	@ExceptionHandler
 	@ResponseStatus(code=HttpStatus.BAD_REQUEST)
+	
 	public ProblemDetails handleValidationException(MethodArgumentNotValidException methodArgumentNotValidException) {
 		ValidationProblemDetails validationProblemDetails = new ValidationProblemDetails();
 		validationProblemDetails.setMessage("VALIDATION.EXCEPTION");

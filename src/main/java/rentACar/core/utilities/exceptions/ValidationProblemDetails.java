@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 
 
 @Data
+@EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
 public class ValidationProblemDetails extends ProblemDetails {

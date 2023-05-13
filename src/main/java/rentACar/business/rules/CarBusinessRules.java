@@ -2,7 +2,6 @@ package rentACar.business.rules;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import rentACar.business.requests.CreateCarRequest;
 import rentACar.core.utilities.exceptions.BusinessException;
 import rentACar.dataAccess.abstracts.CarRepository;
 

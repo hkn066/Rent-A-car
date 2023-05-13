@@ -12,7 +12,7 @@ import rentACar.business.requests.CreateModelRequest;
 import rentACar.business.requests.UpdateModelRequest;
 import rentACar.business.responses.GetAllModelsResponse;
 import rentACar.business.responses.GetByIdModelResponse;
-import rentACar.entities.Model;
+
 
 @RestController
 @RequestMapping("/api/models")
