@@ -5,5 +5,5 @@ import rentACar.entities.Car;
 
 public interface CarRepository  extends JpaRepository<Car,Integer> {
     boolean existsByPlate(String plate);
-    boolean existsByCarId(int id);
+    boolean existsById(int id);
 }

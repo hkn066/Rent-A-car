@@ -22,9 +22,7 @@ public class CarManager implements CarService {
     @Override
     public List<GetAllCarResponse> getALl() {
         List<Car> cars= carRepository.findAll();
-        List<GetAllCarResponse> getAllCarResponses=cars.stream().map(car -> modelMapperService.forResponse().map(car,GetAllCarResponse.class)).toList();
-
-        return getAllCarResponses;
+        return cars.stream().map(car -> modelMapperService.forResponse().map(car,GetAllCarResponse.class)).toList();
     }
 
     @Override
@@ -50,7 +48,7 @@ public class CarManager implements CarService {
 
     @Override
     public GetByIdCarResponse getById(int id) {
-        
-        return null;
+        carBusinessRules.checkIfCarId(id);
+        return modelMapperService.forResponse().map(carRepository.findById(id),GetByIdCarResponse.class);
     }
 }

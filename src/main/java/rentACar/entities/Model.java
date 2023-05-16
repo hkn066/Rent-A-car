@@ -22,7 +22,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "models")
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper=false)
 public class Model {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

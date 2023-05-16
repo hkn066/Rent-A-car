@@ -19,7 +19,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "cars")
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper=false)
 public class Car {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

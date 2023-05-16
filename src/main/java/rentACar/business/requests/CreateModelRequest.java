@@ -1,23 +1,23 @@
 package rentACar.business.requests;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateModelRequest {
-	@NotNull(message = "Name alanı boş bırakılamaz")
-	@NotBlank
-	@Size(min = 3,max = 20,message = "Belirtilen Karakter Aralığında İsim Giriniz!!!")
-	private String name;
-	@NotNull
-	@NotBlank
-	private int brandId;
+    @NotNull(message = "Name alanı boş bırakılamaz")
+    @NotBlank
+    @Size(min = 3, max = 20, message = "Belirtilen Karakter Aralığında İsim Giriniz!!!")
+    private String name;
+
+    private int brandId;
 
 }

@@ -29,6 +29,8 @@ public class BrandManager implements BrandService {
 		List<GetAllBrandsResponse> allBrandsResponses = brands.stream()
 				.map(brand -> this.mapperService.forResponse().map(brand, GetAllBrandsResponse.class))
 				.collect(Collectors.toList());
+
+
 //		List<GetAllBrandsResponse> responses= new ArrayList<GetAllBrandsResponse>();
 //		for(Brand brand : brands) {
 //			GetAllBrandsResponse getAllBrandsResponse= new GetAllBrandsResponse();

@@ -18,7 +18,7 @@ public class CarBusinessRules {
     }
 
     public void checkIfCarId(int id){
-        if (!carRepository.existsByCarId(id)){
+        if (!carRepository.existsById(id)){
             throw new BusinessException("This record does not exist");
         }
     }

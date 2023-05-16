@@ -18,7 +18,6 @@ import lombok.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "brands")
-@EqualsAndHashCode(callSuper=false)
 public class Brand {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

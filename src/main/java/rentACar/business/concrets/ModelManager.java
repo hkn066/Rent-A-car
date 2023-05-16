@@ -26,10 +26,8 @@ public class ModelManager implements ModelService {
     public List<GetAllModelsResponse> getAll() {
         List<Model> models = modelRepository.findAll();
 
-        List<GetAllModelsResponse> modelsResponses = models.stream()
+        return models.stream()
                 .map(model -> this.mapperService.forResponse().map(model, GetAllModelsResponse.class)).toList();
-        //bu alan modelmapperın map alanı verilen classı map ile verileri çevirme işlemini yapar.
-        return modelsResponses;
     }
 
 
@@ -61,8 +59,7 @@ public class ModelManager implements ModelService {
     @Override
     public GetByIdModelResponse getById(int id) {
         Model model = this.modelRepository.findById(id).orElseThrow();
-        GetByIdModelResponse getByIdModelResponse = this.mapperService.forResponse().map(model, GetByIdModelResponse.class);
-        return getByIdModelResponse;
+        return this.mapperService.forResponse().map(model, GetByIdModelResponse.class);
     }
 
 }
