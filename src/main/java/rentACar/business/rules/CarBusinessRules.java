@@ -10,7 +10,7 @@ import rentACar.dataAccess.abstracts.CarRepository;
 public class CarBusinessRules {
 
     private CarRepository carRepository;
-    public void checkIfCarPlae(String plate) {
+    public void checkIfCarPlate(String plate) {
         if (carRepository.existsByPlate(plate)){
             throw new  BusinessException("Already registered with this license plate");
         }

@@ -33,7 +33,7 @@ public class ModelManager implements ModelService {
 
     @Override
     public void add(CreateModelRequest createModelRequest) {
-
+        businessRules.checkIfModelNameExists(createModelRequest.getName());
         Model model = this.mapperService.forRequest().map(createModelRequest, Model.class);
         this.modelRepository.save(model);
 
@@ -41,8 +41,8 @@ public class ModelManager implements ModelService {
 
     @Override
     public void update(UpdateModelRequest updateModelRequest, int id) {
-        this.businessRules.checkIfModelExists(id);
-        this.businessRules.checkIfModelExists(updateModelRequest.getName());
+        this.businessRules.checkIfModelIdExists(id);
+        this.businessRules.checkIfModelNameExists(updateModelRequest.getName());
         Model model = this.mapperService.forRequest().map(updateModelRequest, Model.class);
         model.setId(id);
         this.modelRepository.save(model);
@@ -51,7 +51,7 @@ public class ModelManager implements ModelService {
 
     @Override
     public void delete(int id) {
-        this.businessRules.checkIfModelExists(id);
+        this.businessRules.checkIfModelIdExists(id);
         this.modelRepository.deleteById(id);
 
     }

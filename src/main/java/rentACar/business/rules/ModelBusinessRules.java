@@ -10,13 +10,13 @@ import rentACar.dataAccess.abstracts.ModelRepository;
 public class ModelBusinessRules {
 	private ModelRepository	modelRepository;
 
-	public void checkIfModelExists(String name) {
+	public void checkIfModelNameExists(String name) {
 		if (this.modelRepository.existsByName(name)) {
 			throw new BusinessException("Model name already exists");// Java Exception types arasştır
 		}
 	}
 
-	public void checkIfModelExists(int id) {
+	public void checkIfModelIdExists(int id) {
 		if (!this.modelRepository.existsById(id)) {
 			throw new BusinessException("Model id does not exists");
 		}
