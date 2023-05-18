@@ -22,6 +22,8 @@ public class Car {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
+	@Column(name="packageName")
+	private String packageName;
 	
 	@Column(name="plate",unique = true)
 	private String plate;
@@ -38,6 +40,11 @@ public class Car {
 	@ManyToOne
 	@JoinColumn(name="model_id")
 	private Model model;
+	@ManyToOne
+	@JoinColumn(name = "rentalId")
+	private Rental rental;
+
+
 	
 
 }

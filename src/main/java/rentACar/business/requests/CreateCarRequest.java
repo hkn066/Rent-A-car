@@ -6,25 +6,29 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateCarRequest {
+    @NotNull(message = "Name alanı boş bırakılamaz")
+    @NotBlank
+    @Size(min = 3, max = 20, message = "Belirtilen karakter aralığında değer giriniz!!!")
+    private String packageName;
     @NotNull(message = "Plaka Alanı Boş Olamaz.")
     @NotBlank
-    String plate;
+    private String plate;
     @NotNull(message = "Model Yılı Boş Olamaz")
     @NotBlank
-    int modelYear;
-//    @NotNull(message = "Model İsmi Boş Olamaz")
-//    @NotBlank
-    String modelName;
+    private int modelYear;
+    @NotNull(message = "Model İsmi Boş Olamaz")
+    @NotBlank
+    private int modelId;
 
-    String brandName;
     @NotNull()
     @NotBlank()
-    double dailyPrice;
+    private double dailyPrice;
 
 
 }

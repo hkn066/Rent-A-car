@@ -37,7 +37,7 @@ public class ModelsController {
 	}
 
 	@PutMapping("/{id}")
-	public void updateModel(@RequestBody UpdateModelRequest modelRequest , @PathVariable int id){
+	public void updateModel(@RequestBody @Valid() UpdateModelRequest modelRequest , @PathVariable int id){
 		modelService.update(modelRequest,id);
 	}
 

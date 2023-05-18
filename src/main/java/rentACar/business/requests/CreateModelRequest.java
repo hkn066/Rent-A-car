@@ -17,7 +17,8 @@ public class CreateModelRequest {
     @NotBlank
     @Size(min = 3, max = 20, message = "Belirtilen Karakter Aralığında İsim Giriniz!!!")
     private String name;
-    @NotBlank
+
+    @NotNull
     private int brandId;
 
 }

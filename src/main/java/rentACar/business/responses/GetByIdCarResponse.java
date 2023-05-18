@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GetByIdCarResponse {
-    String plate;
-    double dailyPrice;
-    String modelYear;
-    String modelName;
-    String brandName;
+    private String plate;
+    private double dailyPrice;
+    private String modelYear;
+    private String modelName;
+    private String brandName;
 }

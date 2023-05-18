@@ -10,6 +10,7 @@ import rentACar.business.requests.UpdateCarRequest;
 import rentACar.business.responses.GetAllCarResponse;
 import rentACar.business.responses.GetByIdCarResponse;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -26,13 +27,13 @@ public class CarController {
     }
 
     @PostMapping()
-    public ResponseEntity<Void> createCar(@RequestBody CreateCarRequest createCarRequest) {
+    public ResponseEntity<Void> createCar(@RequestBody @Valid() CreateCarRequest createCarRequest) {
         carService.add(createCarRequest);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> updateCar(@RequestBody UpdateCarRequest updateCarRequest, @PathVariable int id) {
+    public ResponseEntity<Void> updateCar(@RequestBody @Valid() UpdateCarRequest updateCarRequest, @PathVariable int id) {
         carService.update(updateCarRequest, id);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
@@ -43,9 +44,9 @@ public class CarController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<GetByIdCarResponse> getByIdCar(@PathVariable int id) {
+    public ResponseEntity<GetByIdCarResponse> getByIdCar(@PathVariable  int id) {
 
-        return new ResponseEntity<GetByIdCarResponse>(carService.getById(id), HttpStatus.OK);
+        return new ResponseEntity<>(carService.getById(id), HttpStatus.OK);
     }
 
 }
