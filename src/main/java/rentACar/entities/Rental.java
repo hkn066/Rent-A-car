@@ -24,8 +24,9 @@ public class Rental {
     private Date rentDate;
     @Column(name = "returnDate")
     private Date returnDate;
-    @OneToMany(mappedBy = "rental")
-    private List<Car> cars;
+    @OneToOne()
+    @JoinColumn(name = "carId")
+    private Car car;
     @ManyToOne
     @JoinColumn(name = "customerId")
     private Customer customer;
