@@ -24,7 +24,7 @@ public class Rental {
     private Date rentDate;
     @Column(name = "returnDate")
     private Date returnDate;
-    @OneToOne()
+    @ManyToOne
     @JoinColumn(name = "carId")
     private Car car;
     @ManyToOne
