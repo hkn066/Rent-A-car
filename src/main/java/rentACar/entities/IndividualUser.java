@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -14,7 +15,9 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@DiscriminatorValue("individualUser")
 @Table(name ="individualUser")
+
 public class IndividualUser extends User {
     @Column(name = "firstName")
     private String firstName;

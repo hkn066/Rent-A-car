@@ -3,6 +3,7 @@ package rentACar.entities;
 import lombok.*;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -11,9 +12,10 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@DiscriminatorValue("corporateUser")
 @Table(name = "corporateUser")
 public class CorporateUser extends User {
-    @Column(name = "companyName")
-    private String companyName;
+    @Column(name = "companyTitle")
+    private String companyTitle;
 
 }
