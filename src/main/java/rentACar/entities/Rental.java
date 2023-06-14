@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -21,9 +22,9 @@ public class Rental {
     @Column(name = "id")
     private int id;
     @Column(name = "rentDate",nullable = false)
-    private Date rentDate;
+    private LocalDateTime rentDate;
     @Column(name = "returnDate")
-    private Date returnDate;
+    private LocalDateTime returnDate;
     @ManyToOne
     @JoinColumn(name = "carId")
     private Car car;
