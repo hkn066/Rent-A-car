@@ -7,8 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
+
 
 @Getter
 @Setter
@@ -23,7 +22,7 @@ public class Rental {
     private int id;
     @Column(name = "rentDate",nullable = false)
     private LocalDateTime rentDate;
-    @Column(name = "returnDate")
+    @Column(name = "returnDate" )
     private LocalDateTime returnDate;
     @ManyToOne
     @JoinColumn(name = "carId")
