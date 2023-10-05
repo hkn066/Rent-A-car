@@ -23,6 +23,6 @@ public class RentalRequest {
     private int carId;
     @NotNull
     @NotBlank
-    private int customerId;
+    private int userId;
 
 }

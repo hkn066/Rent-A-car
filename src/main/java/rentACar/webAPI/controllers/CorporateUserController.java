@@ -1,22 +1,26 @@
 package rentACar.webAPI.controllers;
 
-import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import rentACar.business.abstracts.CorporateUserService;
-import rentACar.business.abstracts.IndividualUserService;
-import rentACar.business.requests.CreateCorporateUserRequest;
-import rentACar.business.requests.CreateIndividualUserRequest;
-import rentACar.business.requests.UpdateCorporateUserRequest;
-import rentACar.business.requests.UpdateIndividualUserRequest;
-import rentACar.business.responses.GetAllCorporateUserResponse;
-import rentACar.business.responses.GetAllIndividualUserResponse;
-import rentACar.business.responses.GetByIdCorporateUserResponse;
-import rentACar.business.responses.GetByIdIndividualUserResponse;
+import java.util.List;
 
 import javax.validation.Valid;
-import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import lombok.AllArgsConstructor;
+import rentACar.business.abstracts.CorporateUserService;
+import rentACar.business.requests.CreateCorporateUserRequest;
+import rentACar.business.requests.UpdateCorporateUserRequest;
+import rentACar.business.responses.GetAllCorporateUserResponse;
+import rentACar.business.responses.GetByIdCorporateUserResponse;
 
 @RestController
 @AllArgsConstructor

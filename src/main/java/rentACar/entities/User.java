@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Getter
@@ -25,7 +27,8 @@ public class User {
     @Column(name = "password")
     private String password;
     @Column(name = "phoneNumber")
-    private String phoneNumber;
-    @OneToOne(mappedBy = "user")
-    private Customer customer;
+    private String phoneNumber;    
+    @OneToMany(mappedBy = "user")
+    private List<Rental> rentals;
+   
 }

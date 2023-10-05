@@ -13,6 +13,8 @@ import rentACar.entities.Rental;
 public class RentalManager implements RentalService {
     private RentalRepository rentalRepository;
     private ModelMapperService mapperService;
+    
+    
     @Override
     public void addRental(RentalRequest rentalRequest) {
         Rental rental= mapperService.forRequest().map(rentalRequest, Rental.class);

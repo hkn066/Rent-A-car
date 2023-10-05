@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+
+import org.springframework.lang.Nullable;
+
 import java.time.LocalDateTime;
 
 
@@ -22,12 +25,14 @@ public class Rental {
     private int id;
     @Column(name = "rentDate",nullable = false)
     private LocalDateTime rentDate;
+    
     @Column(name = "returnDate" )
+    @Nullable
     private LocalDateTime returnDate;
     @ManyToOne
     @JoinColumn(name = "carId")
     private Car car;
     @ManyToOne
-    @JoinColumn(name = "customerId")
-    private Customer customer;
+    @JoinColumn(name = "userId")
+    private User user;
 }

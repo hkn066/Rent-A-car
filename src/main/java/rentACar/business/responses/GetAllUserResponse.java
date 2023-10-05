@@ -3,8 +3,6 @@ package rentACar.business.responses;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import rentACar.entities.CorporateUser;
-import rentACar.entities.User;
 
 
 @Data
