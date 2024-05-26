@@ -2,6 +2,7 @@ package rentACar.core.utilities.mappers;
 
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.config.Configuration.AccessLevel;
 import org.modelmapper.convention.MatchingStrategies;
 import org.modelmapper.convention.NamingConventions;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,7 @@ public class ModelMapperManager implements ModelMapperService {
     public ModelMapper forResponse() {
         this.modelMapper.getConfiguration()
                 .setAmbiguityIgnored(true)
+                .setFieldAccessLevel(AccessLevel.PUBLIC)
                 .setMatchingStrategy(MatchingStrategies.LOOSE);//gevşek bağlılık için eksik gelen alanları map etme ne geliyorsa onu map et
         return this.modelMapper;
     }

@@ -10,7 +10,7 @@ import rentACar.business.requests.UpdateIndividualUserRequest;
 import rentACar.business.responses.GetAllIndividualUserResponse;
 import rentACar.business.responses.GetByIdIndividualUserResponse;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.util.List;
 
 @RestController

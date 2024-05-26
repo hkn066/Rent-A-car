@@ -10,7 +10,7 @@ import rentACar.business.requests.UpdateBrandRequest;
 import rentACar.business.responses.GetAllBrandsResponse;
 import rentACar.business.responses.GetByIdBrandResponse;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.util.List;
 
 @RestController

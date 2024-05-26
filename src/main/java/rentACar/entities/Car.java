@@ -1,8 +1,9 @@
 package rentACar.entities;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 import lombok.*;
+import rentACar.entities.enumeration.CarStateEnum;
 
 import java.util.List;
 
@@ -29,8 +30,9 @@ public class Car {
 	@Column(name="modelYear")
 	private int modelYear;
 	
+	 @Enumerated(EnumType.ORDINAL)
 	@Column(name="state")
-	private int state; // 1- Available 2-rented 3- Maintenance
+	private CarStateEnum state; // 1- Available 2-rented 3- Maintenance
 	
 	@ManyToOne
 	@JoinColumn(name="model_id")

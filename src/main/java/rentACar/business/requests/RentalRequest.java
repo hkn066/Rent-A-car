@@ -1,13 +1,15 @@
 package rentACar.business.requests;
 
+import java.time.LocalDate;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+import org.springframework.lang.Nullable;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.lang.Nullable;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -15,9 +17,9 @@ import java.time.LocalDateTime;
 public class RentalRequest {
     @NotNull
     @NotBlank
-    private LocalDateTime rentDate;
+    private LocalDate rentDate;
     @Nullable
-    private LocalDateTime returnDate;
+    private LocalDate returnDate;
     @NotNull
     @NotBlank
     private int carId;

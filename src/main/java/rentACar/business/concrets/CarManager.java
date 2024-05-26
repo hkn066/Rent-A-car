@@ -1,6 +1,7 @@
 package rentACar.business.concrets;
 
 import lombok.AllArgsConstructor;
+
 import org.springframework.stereotype.Service;
 import rentACar.business.abstracts.CarService;
 import rentACar.business.requests.CreateCarRequest;
@@ -12,6 +13,7 @@ import rentACar.business.rules.ModelBusinessRules;
 import rentACar.core.utilities.mappers.ModelMapperService;
 import rentACar.dataAccess.abstracts.CarRepository;
 import rentACar.entities.Car;
+import rentACar.entities.enumeration.CarStateEnum;
 
 import java.util.List;
 
@@ -35,6 +37,7 @@ public class CarManager implements CarService {
         this.carBusinessRules.checkIfCarPlate(createCarRequest.getPlate());
         this.modelBusinessRules.checkIfModelIdExists(createCarRequest.getModelId());
         Car car = modelMapperService.forRequest().map(createCarRequest, Car.class);
+        car.setState(CarStateEnum.AVAILABLE);
         this.carRepository.save(car);
     }
 

@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("api/users")
-public class UserCOntroller {
+public class UserController {
 
     private UserService userService;
 

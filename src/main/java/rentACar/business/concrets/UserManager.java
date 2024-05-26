@@ -10,16 +10,16 @@ import rentACar.entities.User;
 
 import java.util.List;
 
-
 @Service
 @AllArgsConstructor
 public class UserManager implements UserService {
-    private UserRepository userRepository;
-    private ModelMapperService mapperService;
+	private UserRepository userRepository;
+	private ModelMapperService mapperService;
 
-    @Override
-    public List<GetAllUserResponse> getAll() {
-        List<User> users= userRepository.findAll();
-        return users.stream().map(userResponse->mapperService.forResponse().map(userResponse,GetAllUserResponse.class)).toList();
-    }
+	@Override
+	public List<GetAllUserResponse> getAll() {
+		List<User> users = userRepository.findAll(); 
+		return users.stream()
+				.map(userResponse -> mapperService.forResponse().map(userResponse, GetAllUserResponse.class)).toList();
+	}
 }

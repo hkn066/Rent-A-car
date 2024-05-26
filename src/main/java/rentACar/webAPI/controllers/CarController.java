@@ -1,5 +1,6 @@
 package rentACar.webAPI.controllers;
 
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +11,7 @@ import rentACar.business.requests.UpdateCarRequest;
 import rentACar.business.responses.GetAllCarResponse;
 import rentACar.business.responses.GetByIdCarResponse;
 
-import javax.validation.Valid;
+
 import java.util.List;
 
 

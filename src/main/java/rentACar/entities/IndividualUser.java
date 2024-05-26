@@ -5,10 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Getter
 @Setter
@@ -16,11 +16,10 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Entity
 @DiscriminatorValue("individualUser")
-@Table(name ="individualUser")
-
+@Table(name = "individualUser")
 public class IndividualUser extends User {
-    @Column(name = "firstName")
-    private String firstName;
-    @Column(name = "lastName")
-    private String lastName;
+	@Column(name = "firstName")
+	private String firstName;
+	@Column(name = "lastName")
+	private String lastName;
 }
