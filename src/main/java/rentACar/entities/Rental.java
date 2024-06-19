@@ -1,15 +1,11 @@
 package rentACar.entities;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import jakarta.persistence.*;
-
 import org.springframework.lang.Nullable;
-
-import java.time.LocalDateTime;
 
 
 @Getter
@@ -23,16 +19,20 @@ public class Rental {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
+
     @Column(name = "rentDate",nullable = false)
-    private LocalDateTime rentDate;
+    private String rentDate;
     
     @Column(name = "returnDate" )
     @Nullable
-    private LocalDateTime returnDate;
-    @ManyToOne
+    private String returnDate;
+
+    @ManyToOne()
     @JoinColumn(name = "carId")
     private Car car;
-    @ManyToOne
+
+    @ManyToOne()
     @JoinColumn(name = "userId")
+
     private User user;
 }

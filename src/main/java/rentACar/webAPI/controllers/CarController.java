@@ -41,6 +41,7 @@ public class CarController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCreate(@PathVariable int id) {
+        carService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

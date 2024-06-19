@@ -12,7 +12,7 @@ import jakarta.validation.constraints.Size;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateCarRequest {
-	@NotNull(message = "Name alanı boş bırakılamaz")
+	@NotNull(message = "İsim alanı boş bırakılamaz")
 	@NotBlank
 	@Size(min = 3, max = 20, message = "Belirtilen karakter aralığında değer giriniz!!!")
 	private String packageName;

@@ -1,9 +1,6 @@
 package rentACar;
 
 
-import java.util.HashMap;
-
-
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,17 +12,15 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-import io.swagger.v3.oas.annotations.OpenAPIDefinition;
-import io.swagger.v3.oas.models.OpenAPI;
-import io.swagger.v3.oas.models.info.Info;
 import rentACar.core.utilities.exceptions.BusinessException;
 import rentACar.core.utilities.exceptions.ProblemDetails;
 import rentACar.core.utilities.exceptions.ValidationProblemDetails;
 
+import java.util.HashMap;
+
 @SpringBootApplication
-@OpenAPIDefinition
 @RestControllerAdvice
+@CrossOrigin
 public class RentACarApplication {
 
 	public static void main(String[] args) {
@@ -54,11 +49,7 @@ public class RentACarApplication {
 		
 		return validationProblemDetails;
 	}
-	@Bean
-	public OpenAPI customOpenAPI() {
-		return new OpenAPI()
-				.info(new Info().title("Rent A Car API").version("1.0").description("Rent A Car API Documentation"));
-	}
+
 	
 	@Bean
 	public ModelMapper getModelMapper() {
